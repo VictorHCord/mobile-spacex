@@ -1,11 +1,12 @@
+import { useNavigation } from "@react-navigation/native";
 import Lottie from "lottie-react-native";
 import React from "react";
-import Icon from 'react-native-vector-icons/Feather';
 import rocket from "../../animation/space-tour.json";
 import Button from "../../components/Button";
 import { Container, Content } from "./styles";
 
 const DashboardPages: React.FC = () => {
+  const navigation = useNavigation();
   return (
     <Container>
       <Lottie
@@ -16,8 +17,7 @@ const DashboardPages: React.FC = () => {
         loop
       />
       <Content>
-        <Icon name="log-in" size={30} color="#900" />;
-        <Button> Entrar </Button>
+        <Button onPress={() => navigation.navigate("Mission")}>Entrar</Button>
       </Content>
     </Container>
   );
