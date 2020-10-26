@@ -6,17 +6,7 @@ import Mission from '../Pages/MissionsPage';
 
 const Auth = createStackNavigator();
 
-const config = {
-  animation: "spring",
-  config: {
-    stiffness: 1000,
-    damping: 500,
-    mass: 3,
-    overshootClamping: true,
-    restDisplacementThreshold: 0.01,
-    restSpeedThreshold: 0.01,
-  },
-};
+
 
 
 
@@ -25,13 +15,7 @@ const AuthRoutes: React.FC = () => (
     screenOptions={{
       headerShown: false,
       gestureEnabled: true,
-      gestureDirection: 'horizontal',
-      transitionSpec: {
-        open: config,
-        close: config
-      }
-        
-      
+      gestureDirection: "horizontal",
     }}
   >
     <Auth.Screen name="Dashboard" component={Dashboard} />

@@ -1,13 +1,12 @@
 import React from "react";
-import { Text } from "react-native";
-import { Container } from "../../components/Button/styles";
+import { Text, View } from "react-native";
 
 
 const MissionsPage: React.FC = () => {
   return (
-    <Container>
-      <Text>Olá nova tela</Text>
-    </Container>
+    <View>
+      <Text> text </Text>
+    </View>
   );
 };
 
