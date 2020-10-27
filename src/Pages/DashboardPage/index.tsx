@@ -5,7 +5,7 @@ import rocket from "../../animation/space-tour.json";
 import Button from "../../components/Button";
 import { Container, Content } from "./styles";
 
-const DashboardPages: React.FC = () => {
+const DashboardPage: React.FC = () => {
   const navigation = useNavigation();
   return (
     <Container>
@@ -23,4 +23,4 @@ const DashboardPages: React.FC = () => {
   );
 };
 
-export default DashboardPages;
+export default DashboardPage;

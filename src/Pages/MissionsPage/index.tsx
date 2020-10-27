@@ -4,8 +4,10 @@ import Lottie from "lottie-react-native";
 import moment from "moment";
 import React from "react";
 import { ScrollView } from "react-native";
+import Loading from "../../animation/loading.json";
 import SpaceError from "../../animation/space-error.json";
 import Button from "../../components/Button";
+import ButtonMissions from "../../components/ButtonMissions";
 import {
   Card,
   Container,
@@ -13,9 +15,10 @@ import {
   ContentError,
   DateArticle,
   DescriptionMission,
-
-  TitleName, TitlePage
+  TitleName,
+  TitlePage,
 } from "./styles";
+
 
 interface MissionInitial {
   mission_name: string;
@@ -53,9 +56,9 @@ const MissionsPage: React.FC = () => {
 
   if (loading)
     return (
-      <Container>
-        <p> ...loading</p>
-      </Container>
+      <ContainerError>
+        <Lottie autoSize source={Loading} autoPlay loop />
+      </ContainerError>
     );
 
   if (error)
@@ -70,7 +73,7 @@ const MissionsPage: React.FC = () => {
         />
         <ContentError>
           <Button onPress={() => navigation.navigate("Dashboard")}>
-            Entrar
+            Retornar
           </Button>
         </ContentError>
       </ContainerError>
@@ -90,6 +93,12 @@ const MissionsPage: React.FC = () => {
               <DescriptionMission>
                 {launch_site.site_name_long}
               </DescriptionMission>
+
+              <ButtonMissions
+                onPress={() => navigation.navigate("Details", { itemId: id })}
+              >
+                Verificar
+              </ButtonMissions>
             </Card>
           )
         )}
