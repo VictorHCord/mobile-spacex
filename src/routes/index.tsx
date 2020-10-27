@@ -3,12 +3,7 @@ import React from 'react';
 import Dashboard from '../Pages/DashboardPages';
 import Mission from '../Pages/MissionsPage';
 
-
 const Auth = createStackNavigator();
-
-
-
-
 
 const AuthRoutes: React.FC = () => (
   <Auth.Navigator

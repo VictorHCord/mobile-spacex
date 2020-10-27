@@ -12,6 +12,6 @@ align-items: center;
 
 
 export const ButtonText = styled.Text`
-color: #000;
-font-size: 16px;
-`
+  color: #000;
+  font-size: 16px;
+`;
