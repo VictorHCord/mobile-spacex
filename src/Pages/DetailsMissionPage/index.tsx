@@ -1,35 +1,47 @@
-import { gql, useQuery } from "@apollo/client";
-import React from "react";
-import { ImageBackground, Text } from "react-native";
-import details from "../../assets/images/details.png";
-
-// import { Container } from './styles';
+import { gql, useQuery } from '@apollo/client'
+import React from 'react'
+import { SafeAreaView, StatusBar } from 'react-native'
+import Detail from '../../assets/images/details.png'
+import {
+  Back,
+  ButtonArticle,
+  ButtonLink,
+  Container,
+  DescriptionMission,
+  Divider,
+  MenuBar,
+  Recipe,
+  RecipeBackground,
+  RecipeContainer,
+  Title,
+  TitleMission,
+} from './styles'
 
 interface ParamsRoutes {
-  route: any;
+  route: any
 }
 interface LaunchInitial {
-  mission_name: string;
-  id: string;
-  details: string;
+  mission_name: string
+  id: string
+  details: string
   links: {
-    article_link: string;
-    video_link: string;
-  };
+    article_link: string
+    video_link: string
+  }
   ships: [
     {
-      image: string;
+      image: string
     }
-  ];
+  ]
 }
 
 interface LaunchId {
-  id: string;
+  id: string
 }
 
 // Definindo ele como array para fazer o map dentro dele
 interface LaunchInfo {
-  launch: LaunchInitial;
+  launch: LaunchInitial
 }
 const GET_MISSION = gql`
   query Launch($id: ID!) {
@@ -47,25 +59,43 @@ const GET_MISSION = gql`
       }
     }
   }
-`;
+`
 
 const DetailsMissionPage: React.FC<ParamsRoutes> = ({ route }) => {
-  const { itemId } = route.params;
+  const { itemId } = route.params
 
   const { data } = useQuery<LaunchInfo, LaunchId>(GET_MISSION, {
     variables: {
       id: itemId,
     },
-  });
+  })
+
+  console.log(data)
 
   return (
-    <ImageBackground
-      source={details}
-      style={{ width: "100%", height: "100%", overflow: "hidden" }}
-    >
-      <Text> test </Text>
-    </ImageBackground>
-  );
-};
+    <Container>
+      <StatusBar barStyle="light-content" />
+      <RecipeBackground source={Detail}>
+        <SafeAreaView>
+          <MenuBar>
+            <Back>
+              <Title> Detalhes da missão </Title>
+            </Back>
+          </MenuBar>
+          <Recipe>
+            <TitleMission>{data?.launch.mission_name}</TitleMission>
+            <Divider />
+          </Recipe>
+          <RecipeContainer>
+            <DescriptionMission>{data?.launch.details}</DescriptionMission>
+            <ButtonArticle>
+              <ButtonLink>Artigo</ButtonLink>
+            </ButtonArticle>
+          </RecipeContainer>
+        </SafeAreaView>
+      </RecipeBackground>
+    </Container>
+  )
+}
 
-export default DetailsMissionPage;
+export default DetailsMissionPage
