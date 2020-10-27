@@ -16,7 +16,8 @@ Poderá ver detalhes das missões entra em artigos ou videos sobre
 
 <br>
 
-<div >
+<div>
 <img src="./src/assets/images/dashboard.png" alt="Tela inicial da aplicação" height="425">
+<img src="./src/assets/images/tela_mission.png" alt="Tela para selecionar a missão" height="425">
 </div>
 <br>
