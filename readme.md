@@ -10,14 +10,40 @@ ocorreu em cada missão e o que falaram sobre.
 <br>
 <br>
 
+## O que é o SPACE X
+SpaceX foi a primeira empresa privada a enviar uma nave para a ISS, fazendo o primeiro pouso propulsivo de um foguete orbital em 2015. [Veja mais](https://canaltech.com.br/espaco/o-que-e-a-spacex-e-por-que-o-lancamento-do-falcon-heavy-e-tao-importante-107944/)
+
 ## Para que esse projeto serve ?
 Criei esse projeto para aprender alguns conceitos e frameworks referente ao react/react-native.
 <br>
-Também queria testar minha como funcion o [GraphQL](https://graphql.org/) junto do [Apollo](https://www.apollographql.com/docs/)
+Também gostaria de aprender sobre [GraphQL](https://graphql.org/) e [Apollo](https://www.apollographql.com/docs/) e um pouco do que eu aprendi utilizando essas ferramentas.
 
 ## Instalação
 
-- Clone o projeto na sua área de trabalho
+- Clone o projeto na sua área de trabalho com o comando: 
+
+- Clonar com HTTPS
+``` 
+git clone https://github.com/VictorHCord/mobile-spacex.git
+```
+<br>
+
+- Clonar com SSH
+```
+git clone git@github.com:VictorHCord/mobile-spacex.git
+```
+
+<br>
+
+- Clonar com GitHub CLI
+```
+gh repo clone VictorHCord/mobile-spacex
+```
+
+<br>
+
+
+## Instalando
 <br>
 
 - Instale as dependencias com o comando: 
