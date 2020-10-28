@@ -4,12 +4,11 @@ import styled from "styled-components/native";
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #fff;
-`;
+`
 
 export const RecipeBackground = styled.ImageBackground`
   width: 100%;
-`;
+`
 
 export const MenuBar = styled.View`
   flex-direction: row;
@@ -29,10 +28,12 @@ export const Recipe = styled.View`
 
 export const Title = styled.Text`
   color: #fff;
+  font-family: 'Roboto-Regular';
 `
 export const TitleMission = styled.Text`
   color: #fff;
   font-size: 32px;
+  font-family: 'Roboto-Regular';
   font-weight: bold;
 `
 
@@ -48,6 +49,7 @@ export const RecipeContainer = styled.View`
   justify-content: center;
   margin-top: -16px;
   padding: 20px;
+  font-family: 'Roboto-Regular';
   background-color: #fff;
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
@@ -57,6 +59,7 @@ export const DescriptionMission = styled.Text`
   font-size: 18px;
   justify-content: center;
   line-height: 28px;
+  font-family: 'Roboto-Regular';
 `
 
 export const ButtonArticle = styled(RectButton)`
@@ -73,7 +76,8 @@ export const ButtonLink = styled.Text`
   color: #fff;
   font-size: 16px;
   font-weight: bold;
-`;
+  font-family: 'Roboto-Regular';
+`
 
 
 export const ButtonVideo = styled.TouchableOpacity`

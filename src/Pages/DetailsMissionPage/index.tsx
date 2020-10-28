@@ -88,11 +88,11 @@ const DetailsMissionPage: React.FC<ParamsRoutes> = ({ route }) => {
               </Back>
             </MenuBar>
             <Recipe>
-              <TitleMission>{data?.launch.mission_name}</TitleMission>
+              <TitleMission numberOfLines={1}>{data?.launch.mission_name}</TitleMission>
               <Divider />
             </Recipe>
             <RecipeContainer>
-              <DescriptionMission>{data?.launch.details}</DescriptionMission>
+              <DescriptionMission numberOfLines={8}>{data?.launch.details}</DescriptionMission>
               {data?.launch.links.article_link !== null && (
                 <>
                   <ButtonArticle>

@@ -3,12 +3,13 @@ import { useNavigation } from '@react-navigation/native'
 import Lottie from 'lottie-react-native'
 import moment from 'moment'
 import React from 'react'
-import { ScrollView } from 'react-native'
+import { ScrollView, StyleSheet } from 'react-native'
 import Loading from '../../animation/loading.json'
 import SpaceError from '../../animation/space-error.json'
 import Button from '../../components/Button'
-import ButtonMissions from '../../components/ButtonMissions'
 import {
+  ButtonLinked,
+  ButtonTextMission,
   Card,
   Container,
   ContainerError,
@@ -16,7 +17,7 @@ import {
   DateArticle,
   DescriptionMission,
   TitleName,
-  TitlePage,
+  TitlePage
 } from './styles'
 
 interface MissionInitial {
@@ -84,8 +85,8 @@ const MissionsPage: React.FC = () => {
 
         {data?.launchesPast.map(
           ({ id, mission_name, launch_site, launch_date_local }) => (
-            <Card key={id}>
-              <TitleName> {mission_name} </TitleName>
+            <Card style={styles.boxShadow} key={id}>
+              <TitleName numberOfLines={1}> {mission_name} </TitleName>
               <DateArticle>
                 {moment(launch_date_local).format('DD/MM/YYYY HH:mm')}
               </DateArticle>
@@ -93,11 +94,11 @@ const MissionsPage: React.FC = () => {
                 {launch_site.site_name_long}
               </DescriptionMission>
 
-              <ButtonMissions
+              <ButtonLinked
                 onPress={() => navigation.navigate('Details', { itemId: id })}
               >
-                Verificar
-              </ButtonMissions>
+                <ButtonTextMission>Verificar</ButtonTextMission>
+              </ButtonLinked>
             </Card>
           )
         )}
@@ -106,4 +107,17 @@ const MissionsPage: React.FC = () => {
   )
 }
 
+const styles = StyleSheet.create({
+  boxShadow: {
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.20,
+    shadowRadius: 1.41,
+
+    elevation: 1,
+  }
+})
 export default MissionsPage
