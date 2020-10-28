@@ -1,7 +1,7 @@
 # SPACE X 
 
 [![GitHub Version](https://img.shields.io/static/v1?label=version&message=1.0.0&color=gree)](https://github.com/VictorHCord/mobile-spacex)
-[![License](https://img.shields.io/static/v1?label=license&message=mit&color=blue)](https://github.com/VictorHCord/mobile-spacex)
+[![License](https://img.shields.io/static/v1?label=license&message=MIT&color=blue)](https://github.com/VictorHCord/mobile-spacex)
 
 <br>
 O Aplicativo você poderá verificar as missões realizada pelo space x.
