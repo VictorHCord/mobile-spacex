@@ -19,6 +19,7 @@ Também queria testar minha como funcion o [GraphQL](https://graphql.org/) junto
 
 - Clone o projeto na sua área de trabalho
 <br>
+
 - Instale as dependencias com o comando: 
 
 ```
