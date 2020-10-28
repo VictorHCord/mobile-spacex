@@ -11,7 +11,7 @@ ocorreu em cada missão e o que falaram sobre.
 <br>
 
 ## O que é o SPACE X
-SpaceX foi a primeira empresa privada a enviar uma nave para a ISS, fazendo o primeiro pouso propulsivo de um foguete orbital em 2015. [Veja mais](https://canaltech.com.br/espaco/o-que-e-a-spacex-e-por-que-o-lancamento-do-falcon-heavy-e-tao-importante-107944/)
+SpaceX foi a primeira empresa privada a enviar uma nave para a ISS, fazendo o primeiro pouso propulsivo de um foguete orbital em 2015. [Veja mais](https://pt.wikipedia.org/wiki/SpaceX)
 
 ## Para que esse projeto serve ?
 Criei esse projeto para aprender alguns conceitos e frameworks referente ao react/react-native.
