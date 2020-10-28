@@ -7,6 +7,7 @@ import Routes from "./routes";
 import { client } from "./services/index";
 
 
+
 const App: React.FC = () => {
   return (
     <ApolloProvider client={client}>
@@ -15,7 +16,7 @@ const App: React.FC = () => {
         <Routes />
       </NavigationContainer>
     </ApolloProvider>
-  );
+  )
 };
 
 export default App;

@@ -1,11 +1,14 @@
 import { gql, useQuery } from '@apollo/client'
 import React from 'react'
-import { SafeAreaView, StatusBar } from 'react-native'
+import { Linking, SafeAreaView, StatusBar } from 'react-native'
+import { ScrollView } from 'react-native-gesture-handler'
 import Detail from '../../assets/images/details.png'
 import {
   Back,
   ButtonArticle,
-  ButtonLink,
+
+  ButtonLink, ButtonVideo,
+
   Container,
   DescriptionMission,
   Divider,
@@ -14,7 +17,7 @@ import {
   RecipeBackground,
   RecipeContainer,
   Title,
-  TitleMission,
+  TitleMission
 } from './styles'
 
 interface ParamsRoutes {
@@ -70,31 +73,45 @@ const DetailsMissionPage: React.FC<ParamsRoutes> = ({ route }) => {
     },
   })
 
-  console.log(data)
+
+
 
   return (
-    <Container>
-      <StatusBar barStyle="light-content" />
-      <RecipeBackground source={Detail}>
-        <SafeAreaView>
-          <MenuBar>
-            <Back>
-              <Title> Detalhes da missão </Title>
-            </Back>
-          </MenuBar>
-          <Recipe>
-            <TitleMission>{data?.launch.mission_name}</TitleMission>
-            <Divider />
-          </Recipe>
-          <RecipeContainer>
-            <DescriptionMission>{data?.launch.details}</DescriptionMission>
-            <ButtonArticle>
-              <ButtonLink>Artigo</ButtonLink>
-            </ButtonArticle>
-          </RecipeContainer>
-        </SafeAreaView>
-      </RecipeBackground>
-    </Container>
+    <ScrollView>
+      <Container>
+        <StatusBar barStyle="light-content" />
+        <RecipeBackground source={Detail}>
+          <SafeAreaView>
+            <MenuBar>
+              <Back>
+                <Title> Detalhes da missão </Title>
+              </Back>
+            </MenuBar>
+            <Recipe>
+              <TitleMission>{data?.launch.mission_name}</TitleMission>
+              <Divider />
+            </Recipe>
+            <RecipeContainer>
+              <DescriptionMission>{data?.launch.details}</DescriptionMission>
+              {data?.launch.links.article_link !== null && (
+                <>
+                  <ButtonArticle>
+                    <ButtonLink onPress={() => Linking.openURL(`${data?.launch.links.article_link}`)}>Artigo</ButtonLink>
+                  </ButtonArticle>
+                </>
+              )}
+
+              {data?.launch.links.video_link !== null && (
+                <ButtonVideo>
+                  <ButtonLink onPress={() => Linking.openURL(`${data?.launch.links.video_link}`)}>Videos</ButtonLink>
+                </ButtonVideo>
+              )}
+
+            </RecipeContainer>
+          </SafeAreaView>
+        </RecipeBackground>
+      </Container>
+    </ScrollView>
   )
 }
 
